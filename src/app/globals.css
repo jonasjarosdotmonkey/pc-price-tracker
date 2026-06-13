@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 15 15 19;
+    --foreground: 229 231 235;
+    --border: 37 37 51;
+    --ring: 59 130 246;
+  }
+
+  * {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #252533 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #252533;
+    border-radius: 3px;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-surface-900 text-gray-200 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  a {
+    @apply transition-colors duration-150;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-surface-800/60 backdrop-blur-sm border border-surface-600;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:border-brand-600/50 hover:shadow-lg hover:shadow-brand-900/20;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-600 hover:bg-surface-500 text-gray-200 font-medium px-4 py-2 rounded-lg border border-surface-500 transition-colors duration-150;
+  }
+
+  .btn-ghost {
+    @apply text-gray-400 hover:text-gray-200 hover:bg-surface-700 px-3 py-1.5 rounded-lg transition-colors duration-150;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-surface-700 rounded;
+  }
+
+  .price-tag {
+    @apply font-bold tabular-nums;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-green {
+    @apply badge bg-green-500/15 text-green-400;
+  }
+
+  .badge-red {
+    @apply badge bg-red-500/15 text-red-400;
+  }
+
+  .badge-blue {
+    @apply badge bg-brand-500/15 text-brand-400;
+  }
+
+  .badge-gray {
+    @apply badge bg-surface-600 text-gray-400;
+  }
+}
