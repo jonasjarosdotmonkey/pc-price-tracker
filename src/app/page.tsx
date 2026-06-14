@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { ProductCard } from "@/components/products/product-card";
+
+export const dynamic = "force-dynamic";
 import {
   Zap, TrendingDown, Bell, Cpu, Monitor, MemoryStick,
   HardDrive, Fan, Package, ArrowRight, Star,
